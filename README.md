@@ -1,3 +1,5 @@
+# REG.NO: 212224110035
+# NAME: MAHA SHREE.M
 # EXPERIMENT-06-INTERRUPT-GENERATION-USING-PUSHBUTTON-AND-SIMULATING-THE-OUTPUT
 
 ### Aim:
@@ -89,14 +91,26 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
   
 
 ## STM 32 CUBE PROGRAM :
+```
+#include "main.h"
 
+void SystemClock_Config(void); static void MX_GPIO_Init(void);
 
+int main(void) { HAL_Init(); SystemClock_Config(); MX_GPIO_Init();
+
+while (1) { } }
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) { if(GPIO_Pin == GPIO_PIN_0){ HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5); } }
+```
 
 ## Output screen shots of proteus  :
  
- 
+ ![pmc exp6](https://github.com/user-attachments/assets/b04ae1b3-6eca-4134-bb3d-7e29619a297b)
+
  ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
  
- 
+ ![image](https://github.com/user-attachments/assets/5deede62-5d6a-4b3e-92c3-48d9d401ebe2)
+
 ## Result :
+
 Interfacing a push button and interrupt genrateion is simulated using proteus 
